@@ -42,6 +42,17 @@ modeToggle.addEventListener('change', () => {
   mode = modeToggle.checked ? 'encrypt' : 'decrypt';
   modeLabel.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
   actionBtn.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+  if (mode === 'encrypt') {
+    document.getElementById('plaintext').removeAttribute('readonly');
+    document.getElementById('ciphertext').setAttribute('readonly', 'readonly');
+    document.getElementById('plaintext').placeholder = "Type your message here...";
+    document.getElementById('ciphertext').placeholder = "Encrypted text will appear here";
+  } else {
+    document.getElementById('ciphertext').removeAttribute('readonly');
+    document.getElementById('plaintext').setAttribute('readonly', 'readonly');
+    document.getElementById('ciphertext').placeholder = "Paste your encrypted text here...";
+    document.getElementById('plaintext').placeholder = "Decrypted text will appear here";
+  }
 });
 
 // Action button (Encrypt/Decrypt)
