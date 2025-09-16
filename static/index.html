@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple AES Encryptor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <h1>Simple AES Tool</h1>
+
+        <div id="status" class="status"></div>
+
+        <div class="toggle-container">
+            <span id="mode-label">Encrypt</span>
+            <label class="switch">
+            <input type="checkbox" checked id="modeToggle">
+            <span class="slider"></span>
+            </label>
+        </div>
+        
+    </div>
+
+
+
+    <label for="plaintext">Plain text</label>
+    <textarea id="plaintext" rows="6" placeholder="Type your message here..."></textarea>
+
+    <label for="password">Secret key (password)</label>
+    <input id="password" type="password" placeholder="Enter secret key" />
+
+    <div class="row">
+        <button id="actionBtn">Encrypt</button>
+        <button id="copyBtn">Copy</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+
+
+    <label for="ciphertext">Output (base64)</label>
+    <textarea id="ciphertext" rows="6" readonly placeholder="Encrypted text will appear here"></textarea>
+    <small class="note">
+      Uses AES-GCM with a key derived by PBKDF2-HMAC-SHA256. Salt+nonce+ciphertext are bundled and base64 encoded.
+    </small>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
