@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simple AES Encryptor</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <title>Crypto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,10 +26,10 @@
 
 
 
-    <label for="plaintext">Plain text</label>
+    <label for="plaintext" id="plaintext-label">Plain text</label>
     <textarea id="plaintext" rows="6" placeholder="Type your message here..."></textarea>
 
-    <label for="password">Secret key (password)</label>
+    <label for="password" id="password-label" aria-placeholder="Enter secret key">Secret key</label>
     <input id="password" type="password" placeholder="Enter secret key" />
 
     <div class="row">
@@ -38,10 +39,10 @@
     </div>
 
 
-    <label for="ciphertext">Output (base64)</label>
+    <label for="ciphertext" id="ciphertext-label">Cipher text</label>
     <textarea id="ciphertext" rows="6" readonly placeholder="Encrypted text will appear here"></textarea>
     <small class="note">
-      Uses AES-GCM with a key derived by PBKDF2-HMAC-SHA256. Salt+nonce+ciphertext are bundled and base64 encoded.
+      <i>Uses AES-GCM with a key derived by PBKDF2-HMAC-SHA256. Salt+nonce+ciphertext are bundled and base64 encoded.</i>
     </small>
   </div>
 
